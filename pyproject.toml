@@ -11,8 +11,9 @@ name = "fritz-ds"
 authors = [{name = "Fritz Morgendorfer", email = "fritz.morgendorfer@gmail.com"}]
 description = "Self-implemented stuff in the field of DS/ML."
 classifiers = [
-    "Programming Language :: Python :: 3.10"
+    "Programming Language :: Python :: 3.11"
 ]
+requires-python = ">=3.11, <3.12"
 dynamic = ["version", "dependencies", "optional-dependencies"]
 
 [project.scripts]
@@ -33,21 +34,24 @@ dev = {file = ["requirements-dev.txt"]}
 where = ["src"]
 namespaces = true
 
-[tool.black]
+[tool.ruff]
 line-length = 89
-safe = true
-skip-string-normalization = true
-target-version = ['py310']
 
-[tool.isort]
-multi_line_output = 3
-force_single_line = false
-group_by_package = true
-combine_as_imports = true
-line_length = 89
-include_trailing_comma = true
-known_fritz = "fritz_ds_lib, fritz_ds_pipe"
-sections = ["FUTURE", "STDLIB", "FIRSTPARTY", "THIRDPARTY", "FRITZ", "LOCALFOLDER"]
+[tool.ruff.lint]
+extend-select = ["E501", "F401"]
+select = ["T201"]
 
-[tool.flake8]
-max-line-length = 89
+[tool.ruff.lint.flake8-quotes]
+inline-quotes = "double"
+
+[tool.ruff.lint.isort]
+section-order = ["future", "standard-library", "third-party", "first-party", "fritz", "local-folder"]
+
+[tool.ruff.lint.isort.sections]
+fritz = ["fritz_ds_lib, fritz_ds_pipe"]
+
+[tool.mypy]
+plugins = ["pydantic.mypy"]
+files = ["src", "tests"]
+mypy_path = ["src"]
+explicit_package_bases = true

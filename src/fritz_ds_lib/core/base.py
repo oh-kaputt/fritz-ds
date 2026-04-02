@@ -12,7 +12,6 @@ def validate_model(value: dict | Any) -> Any:
 
 
 class ProjectBaseModel(BaseModel):
-
     model_config = ConfigDict(
         arbitrary_types_allowed=True,  # allow for any types
         validate_assignment=True,  # run validators when assigning values

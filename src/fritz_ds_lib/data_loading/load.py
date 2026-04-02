@@ -48,7 +48,6 @@ class AbstractRawDataLoader(BaseModel):
 
 
 class OpenMlRawDataLoader(AbstractRawDataLoader):
-
     name: str
     version: int
 
@@ -60,7 +59,6 @@ class OpenMlRawDataLoader(AbstractRawDataLoader):
 
 
 class AbstractLocalRawDataLoader(AbstractRawDataLoader):
-
     path: Union[str, Path]
 
     @abstractmethod
@@ -75,7 +73,6 @@ class AbstractLocalRawDataLoader(AbstractRawDataLoader):
 
 
 class ExcelRawDataLoader(AbstractLocalRawDataLoader):
-
     sheet_name: str
 
     @final

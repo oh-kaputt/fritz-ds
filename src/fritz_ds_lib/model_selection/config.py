@@ -9,7 +9,6 @@ from fritz_ds_lib.model_selection.cv_split import SklearnCvSplitProtocol
 
 
 class SklearnCvSplit(ProjectBaseModel):
-
     sklearn_cls: Type[SklearnCvSplitProtocol]
     params: dict[str, Any]
 

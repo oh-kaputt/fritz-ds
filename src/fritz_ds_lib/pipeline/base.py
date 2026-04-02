@@ -5,7 +5,6 @@ from fritz_ds_lib.core.cereal import import_object
 
 
 class PipelineConfig(ProjectBaseModel):
-
     pipeline_obj_path: str
 
     @property

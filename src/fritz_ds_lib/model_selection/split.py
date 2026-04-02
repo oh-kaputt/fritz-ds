@@ -12,7 +12,6 @@ BTW_0_1 = Annotated[float, Field(gt=0.0, lt=1.0)]
 
 
 class AbstractTrainTestSpliter(BaseModel):
-
     train: Union[BTW_0_1, datetime]
     validation: Union[BTW_0_1, datetime] = None
     test: Union[BTW_0_1, datetime] = None
@@ -65,7 +64,6 @@ class SklearnTrainTestSpliter(AbstractTrainTestSpliter):
 
 
 class TimeBasedTrainTestSpliter(AbstractTrainTestSpliter):
-
     train: datetime = None
     validation: datetime = None
     test: datetime = None

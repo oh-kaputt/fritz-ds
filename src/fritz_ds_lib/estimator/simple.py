@@ -6,7 +6,6 @@ from fritz_ds_lib.estimator.adapter import AbstractEstimator
 
 
 class AverageValuePredictor(ProjectBaseModel, BaseEstimator):
-
     average_value: float
 
     def predict(self, X):

@@ -1,4 +1,5 @@
 """Module for tests learners' yaml config files."""
+
 from importlib import resources
 
 import pytest

@@ -1,13 +1,14 @@
-# interactive development
-jupyter~=1.1.1
+# formatting/ linting
+ruff==0.15.8
 
-# Style checks
-flake8
-flake8-isort==6.1.1
-flake8-print==4.0.0
-black==22.12.0
-isort==5.12.0
+# static type checking
+mypy==1.19.1
+types-PyYAML
+pandas-stubs
+
 pre-commit==4.0.1
 
 # Testing
+coverage[toml]
 pytest
+pytest-cov

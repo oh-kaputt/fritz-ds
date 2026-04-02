@@ -1,4 +1,5 @@
 """Tests for custom yaml tags."""
+
 import pytest
 import yaml
 

@@ -14,7 +14,6 @@ T = TypeVar("T", bound=BaseEstimator)
 
 
 class AbstractEstimator(ProjectBaseModel):
-
     params: dict[str, Any]
     model_: Optional[T] = None
 
@@ -54,7 +53,6 @@ class AbstractEstimator(ProjectBaseModel):
 
 
 class SklearnEstimator(AbstractEstimator):
-
     model_type: Type[T]
 
     @field_validator("model_type", mode="before")
@@ -78,16 +76,13 @@ class SklearnEstimator(AbstractEstimator):
         return self.model_.classes_
 
 
-class SklearnClassifier(SklearnEstimator, ClassifierMixin, BaseEstimator):
-    ...
+class SklearnClassifier(SklearnEstimator, ClassifierMixin, BaseEstimator): ...
 
 
-class SklearnRegressor(SklearnEstimator, RegressorMixin, BaseEstimator):
-    ...
+class SklearnRegressor(SklearnEstimator, RegressorMixin, BaseEstimator): ...
 
 
 class LgbmEstimator(AbstractEstimator):
-
     model_: Optional[Booster] = None
     cols_categorical: list[str]
 
@@ -110,9 +105,7 @@ class LgbmEstimator(AbstractEstimator):
         return np.array([0, 1])
 
 
-class LgbmClassifier(LgbmEstimator, ClassifierMixin, BaseEstimator):
-    ...
+class LgbmClassifier(LgbmEstimator, ClassifierMixin, BaseEstimator): ...
 
 
-class LgbmRegressor(LgbmEstimator, RegressorMixin, BaseEstimator):
-    ...
+class LgbmRegressor(LgbmEstimator, RegressorMixin, BaseEstimator): ...

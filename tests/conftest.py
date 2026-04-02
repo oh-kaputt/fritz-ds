@@ -3,7 +3,7 @@ from pathlib import Path
 import pytest
 
 SRC_ROOT = Path(__file__).parents[1]
-RESOURCE_PATH = SRC_ROOT / "test/resources"
+RESOURCE_PATH = SRC_ROOT / "tests/resources"
 
 
 @pytest.fixture(scope="session")

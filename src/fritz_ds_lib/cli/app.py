@@ -71,5 +71,5 @@ def cli_cv(cfg: AppConfig, do_all: bool) -> None:
         cv.cv(cfg)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     cli()

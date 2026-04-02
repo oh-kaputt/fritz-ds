@@ -11,7 +11,6 @@ from fritz_ds_lib.utils.utils import load_from_file
 
 
 class AppConfig(BaseModel):
-
     loader: SkipValidation[DataLoader]
     model_cfg: SkipValidation[ModelConfig]
     model_cfg_folder: str
